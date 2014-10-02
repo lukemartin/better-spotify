@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="betterSpotify">
 <head>
 
   <!-- Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta charset="utf-8">
+  <base href="/">
   <title>Better Spotify</title>
 
   <!-- Styles -->
@@ -14,9 +15,24 @@
 
 <body>
 
-  <h1>Hello</h1>
+  <h1>Better Spotify</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Main</a></li>
+      <li><a href="/meow">Meow</a></li>
+    </ul>
+  </nav>
+
+  <hr>
+
+  <div ng-view></div>
 
   <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular-route.js"></script>
   <script src="/js/main.js"></script>
+
+  <script src="http://127.0.0.1:35779/livereload.js"></script>
 </body>
 </html>
