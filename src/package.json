@@ -1,21 +1,20 @@
 {
-  "name": "better-spotify",
+  "name": "spotify-browser",
   "version": "0.0.0",
-  "description": "better-spotify",
+  "description": "spotify-browser",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lukemartin/better-spotify.git"
+    "url": "git://github.com/lukemartin/spotify-browser.git"
   },
   "author": "Luke Martin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lukemartin/better-spotify/issues"
+    "url": "https://github.com/lukemartin/spotify-browser/issues"
   },
-  "homepage": "https://github.com/lukemartin/better-spotify",
+  "homepage": "https://github.com/lukemartin/spotify-browser",
   "devDependencies": {
     "coffee-script": "~1.8.0",
     "gulp": "~3.8.7",
