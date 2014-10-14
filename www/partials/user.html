@@ -1,1 +1,8 @@
 <h1>Hi, {{ user.id }}</h1>
+
+<table>
+  <tr ng-repeat="track in tracks.items">
+    <td>{{ track.track.name }}</td>
+    <td>{{ track.track.artists[0].name }}</td>
+  </tr>
+</table>

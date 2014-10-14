@@ -96,6 +96,7 @@ app.controller('UserController', ['$scope', '$http', ($scope, $http) ->
       })
       .success((data) ->
         console.log data
+        $scope.tracks = data
       )
       .error((data) ->
         console.log data
