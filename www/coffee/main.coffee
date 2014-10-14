@@ -66,7 +66,7 @@ app.controller('ArtistController', ['$scope', '$http', '$routeParams', ($scope, 
 
 app.controller('AuthController', ['$scope', '$http', ($scope, $http) ->
   clientId = '59d6d5180eca418095c49cb30bc0c3a3'
-  redirectUrl = encodeURIComponent('http://lukes-imac.local:4141/authed')
+  redirectUrl = encodeURIComponent('http://localhost:4141/authed')
 
   window.location = "https://accounts.spotify.com/authorize?client_id=#{clientId}&response_type=token&redirect_uri=#{redirectUrl}&scope=user-library-read user-library-modify"
 ])
