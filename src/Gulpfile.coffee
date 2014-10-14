@@ -3,6 +3,7 @@ gulp        = require 'gulp'
 gutil       = require 'gulp-util'
 browserify  = require 'gulp-browserify'
 coffee      = require 'gulp-coffee'
+coffeelint  = require 'gulp-coffeelint'
 concat      = require 'gulp-concat'
 header      = require 'gulp-header'
 htmlreplace = require 'gulp-html-replace'
@@ -42,6 +43,11 @@ gulp.task 'coffee', ->
     .pipe gulp.dest './js'
     .pipe livereload(35779)
 
+gulp.task 'lint', ->
+  gulp.src './coffee/**/*.coffee'
+    .pipe coffeelint()
+    .pipe coffeelint.reporter()
+
 gulp.task 'livereload', ->
   gulp.src ['./**/*.html']
     .pipe livereload(35779)
@@ -72,8 +78,8 @@ gulp.task 'package', ->
     .pipe gulp.dest('../dist')
 
 # Default tasks
-gulp.task 'default', ['coffee', 'stylus'], ->
+gulp.task 'default', ['coffee', 'stylus', 'lint'], ->
   livereload(35779)
-  gulp.watch './coffee/**/*.coffee', ['coffee']
+  gulp.watch './coffee/**/*.coffee', ['coffee', 'lint']
   gulp.watch './stylus/**/*.styl', ['stylus']
   gulp.watch ['./**/*.html'], ['livereload']

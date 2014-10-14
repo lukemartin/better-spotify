@@ -93,7 +93,7 @@ app.controller('AuthedController', ['$scope', '$http', '$location', ($scope, $ht
 app.controller('UserController', ['$scope', '$http', ($scope, $http) ->
   getTracks = ->
     $http
-      .get("https://api.spotify.com/v1/me/tracks?limit=50", {
+      .get('https://api.spotify.com/v1/me/tracks?limit=50', {
         headers: {
           'Authorization': 'Bearer ' + window.localStorage.getItem('accessToken')
         }
@@ -108,7 +108,7 @@ app.controller('UserController', ['$scope', '$http', ($scope, $http) ->
       )
 
   $http
-    .get("https://api.spotify.com/v1/me", {
+    .get('https://api.spotify.com/v1/me', {
       headers: {
         'Authorization': 'Bearer ' + window.localStorage.getItem('accessToken')
       }
