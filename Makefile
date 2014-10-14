@@ -2,10 +2,10 @@ setup:
 	cd src && npm install
 
 start:
-	php -S localhost:4141
+	cd src && php -S localhost:4141
 
 watch:
-	gulp
+	cd src && gulp
 
 build:
 	rm -rf dist/*
