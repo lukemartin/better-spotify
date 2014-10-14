@@ -1,6 +1,7 @@
 # Load required libraries
 gulp        = require 'gulp'
 gutil       = require 'gulp-util'
+browserify  = require 'gulp-browserify'
 coffee      = require 'gulp-coffee'
 concat      = require 'gulp-concat'
 header      = require 'gulp-header'
@@ -31,12 +32,14 @@ gulp.task 'stylus', ->
     .pipe livereload(35779)
 
 gulp.task 'coffee', ->
-  gulp.src './coffee/**/*.coffee'
-    .pipe sourcemaps.init()
-    .pipe coffee({ bare: false }).on('error', gutil.log)
-    .pipe sourcemaps.write()
-    .pipe concat('main.js')
-    .pipe gulp.dest('./js')
+  gulp.src './coffee/main.coffee', { read: false }
+    .pipe browserify(
+      debug: true,
+      transform: ['coffeeify']
+      extensions: ['.coffee']
+    )
+    .pipe concat 'main.js'
+    .pipe gulp.dest './js'
     .pipe livereload(35779)
 
 gulp.task 'livereload', ->
@@ -44,12 +47,16 @@ gulp.task 'livereload', ->
     .pipe livereload(35779)
 
 gulp.task 'package', ->
-  gulp.src './coffee/**/*.coffee'
-    .pipe coffee({ bare: false }).on('error', gutil.log)
-    .pipe concat('main.min.js')
+  gulp.src './coffee/main.coffee', { read: false }
+    .pipe browserify(
+      debug: false,
+      transform: ['coffeeify']
+      extensions: ['.coffee']
+    )
+    .pipe concat 'main.min.js'
     .pipe uglify()
     .pipe header(banner, { pkg: pkg })
-    .pipe gulp.dest('../dist/js')
+    .pipe gulp.dest '../dist/js'
   gulp.src './stylus/main.styl'
     .pipe stylus
       use: [nib()]

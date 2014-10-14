@@ -1,4 +1,8 @@
+test = require('./test')()
+
 app = angular.module('betterSpotify', ['ngRoute'])
+
+baseHref = $('head base').attr('href')
 
 app.config(['$routeProvider', '$locationProvider', '$compileProvider', ($routeProvider, $locationProvider, $compileProvider) ->
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|tel|spotify):/)
@@ -66,7 +70,7 @@ app.controller('ArtistController', ['$scope', '$http', '$routeParams', ($scope, 
 
 app.controller('AuthController', ['$scope', '$http', ($scope, $http) ->
   clientId = '59d6d5180eca418095c49cb30bc0c3a3'
-  redirectUrl = encodeURIComponent('http://localhost:4141/authed')
+  redirectUrl = encodeURIComponent("#{baseHref}authed")
 
   window.location = "https://accounts.spotify.com/authorize?client_id=#{clientId}&response_type=token&redirect_uri=#{redirectUrl}&scope=user-library-read user-library-modify"
 ])
