@@ -5,26 +5,26 @@ app.config(['$routeProvider', '$locationProvider', '$compileProvider', ($routePr
   $locationProvider.html5Mode(true)
   $routeProvider
     .when('/meow',
-      templateUrl: '/partials/meow.html'
+      templateUrl: 'partials/meow.html'
     )
     .when('/artists/:id',
-      templateUrl: '/partials/artist.html'
+      templateUrl: 'partials/artist.html'
       controller: 'ArtistController'
     )
     .when('/auth',
-      templateUrl: '/partials/auth.html'
+      templateUrl: 'partials/auth.html'
       controller: 'AuthController'
     )
     .when('/authed',
-      templateUrl: '/partials/meow.html'
+      templateUrl: 'partials/meow.html'
       controller: 'AuthedController'
     )
     .when('/user',
-      templateUrl: '/partials/user.html'
+      templateUrl: 'partials/user.html'
       controller: 'UserController'
     )
     .otherwise(
-      templateUrl: '/partials/main.html'
+      templateUrl: 'partials/main.html'
       controller: 'HomeController'
     )
 ])
