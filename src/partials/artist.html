@@ -1,0 +1,12 @@
+<h1>{{ artist.name }}</h1>
+
+<img src="{{ artist.images[0].url }}" width="200"/>
+
+<h2>Albums</h2>
+
+<table>
+  <tr ng-repeat="album in albums">
+    <td><img src="{{ album.images[0].url }}" width="200" /></td>
+    <td><a href="{{ album.uri }}">{{ album.name }}</a></td>
+  </tr>
+</table>
