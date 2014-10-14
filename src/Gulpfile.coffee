@@ -61,7 +61,7 @@ gulp.task 'package', ->
     .pipe htmlreplace
       css: 'css/main.min.css'
       js: 'js/main.min.js'
-      basehref: '<base href="/better-spotify/">'
+      basehref: '<base href="/spotify-browser/">'
     .pipe gulp.dest('../dist')
 
 # Default tasks
