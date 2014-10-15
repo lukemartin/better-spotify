@@ -12,5 +12,6 @@ class Viewport
     height = $(window).outerHeight() - $('.main-header').outerHeight() - $('.main-footer').outerHeight()
     @elem.css
       height: height
+      marginTop: $('.main-header').outerHeight()
 
 $('.js-viewport').each -> new Viewport($(this))
