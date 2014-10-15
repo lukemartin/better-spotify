@@ -4,8 +4,7 @@ class Viewport
     @binders()
 
   binders: ->
-    $(window).resize =>
-      @setup()
+    $(window).resize => @setup()
     $(window).trigger 'resize'
 
   setup: ->
