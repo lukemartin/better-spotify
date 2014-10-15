@@ -3,6 +3,6 @@
     "name": "spotify-browser",
     "path": ".",
     "file_exclude_patterns": ["*.sublime-workspace"],
-    "folder_exclude_patterns": ["node_modules", "dsist", "src/css", "src/js"]
+    "folder_exclude_patterns": ["node_modules", "dist", "src/css", "src/js"]
   }]
 }

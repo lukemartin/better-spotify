@@ -1,3 +1,95 @@
+@require 'nib';
+@require '_reset';
+
+// vars
+$maxWidth = 400px;
+$darkestGrey = #121314;
+$darkGrey = #222226;
+
+// layout
+body, html {
+  height: 100%;
+}
 body {
-  color: black;
+  background-color: $darkestGrey;
+  overflow: hidden;
+}
+
+// type
+body {
+  font-family: Helvetica, sans-serif;
+  color: #fff;
+}
+.hN {
+}
+h1, .h1 {
+  font-size: 30px;
+}
+h2, .h2 {
+  font-size: 24px;
+}
+h3, .h3 {
+  font-size: 20px;
+}
+h4, .h4 {
+  font-size: 16px;
+}
+h5, .h5,
+h6, .h6 {
+  font-size: 12px;
+}
+a {
+  &:active,
+  &:link,
+  &:visited {
+    color: rgba(#fff, 0.7);
+  }
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
+.hN, p, li {
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.4;
+}
+
+// header
+.main-header {
+  background-color: $darkGrey;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+// branding
+.branding {
+  text-align: center;
+}
+
+// footer
+.main-footer {
+  background-color: $darkGrey;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// main
+.main {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  overflow: scroll;
+  padding: 20px;
+  width: 100%;
 }

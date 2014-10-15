@@ -1,6 +1,8 @@
 # Create the global
 window.SB ?= {}
 
+require './ui.coffee'
+
 do (SB = window.SB) ->
 
   # Set the default config vars
