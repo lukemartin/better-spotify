@@ -8,9 +8,8 @@ class Viewport
     $(window).trigger 'resize'
 
   setup: ->
-    height = $(window).outerHeight() - $('.main-header').outerHeight() - $('.main-footer').outerHeight()
     @elem.css
-      height: height
       marginTop: $('.main-header').outerHeight()
+      marginBottom: $('.main-footer').outerHeight()
 
 $('.js-viewport').each -> new Viewport($(this))
