@@ -59,6 +59,23 @@ p {
   line-height: 1.4;
 }
 
+.list-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+.list-horizontal {
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
 // header
 .main-header {
   background-color: $darkGrey;
@@ -93,6 +110,6 @@ p {
   max-width: $maxWidth;
   margin: 0 auto;
   overflow: scroll;
-  padding: 20px;
+  padding: 20px 0;
   width: 100%;
 }

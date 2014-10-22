@@ -13,7 +13,7 @@ do (SB = window.SB) ->
   SB.app = angular.module 'spotifyBrowser', ['ngRoute']
 
   # Require submodules
-  require('./controllers/homeController.coffee') SB
+  require('./controllers/ArtistsController.coffee') SB
 
   # Angular app config
   SB.app.config [
@@ -30,7 +30,10 @@ do (SB = window.SB) ->
 
       # Configure routes
       $routeProvider
+        .when('/artists',
+          templateUrl: 'partials/artists.html'
+          controller: 'ArtistsController'
+        )
         .otherwise
-          templateUrl: 'partials/home.html'
-          controller: 'HomeController'
+          redirectTo: '/artists'
   ]
