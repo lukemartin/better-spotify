@@ -3,7 +3,7 @@ window.SB ?= {}
 
 require './ui.coffee'
 
-do (SB = window.SB) ->
+do (SB = window.SB, $ = window.jQuery) ->
 
   # Set the default config vars
   SB.config =
