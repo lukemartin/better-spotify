@@ -9,6 +9,8 @@ do (SB = window.SB, $ = window.jQuery) ->
   SB.config =
     baseHref: $('head base').attr 'href'
 
+  SB.stores = require('./stores.coffee')
+
   # Create the angular app
   SB.app = angular.module 'spotifyBrowser', ['ngRoute']
 
