@@ -26,7 +26,7 @@ do (SB = window.SB) ->
       $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|file|tel|spotify):/
 
       # Turn on History API
-      $locationProvider.html5Mode true
+      # $locationProvider.html5Mode true
 
       # Configure routes
       $routeProvider
